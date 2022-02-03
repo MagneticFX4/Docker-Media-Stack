@@ -17,7 +17,6 @@ services:
     restart: unless-stopped
 
 # Sonarr
----
   sonarr:
     image: docker.io/linuxserver/sonarr:latest
     container_name: sonarr
@@ -35,7 +34,6 @@ services:
     restart: unless-stopped
 
 # Overseerr
----
   overseerr:
     image: sctx/overseerr:latest
     container_name: overseerr
