@@ -29,9 +29,26 @@ services:
       PGID: '0'
       TZ: America/New_York
     volumes:
-      - '/opt/appdata/sonarr:/config'
+      - '/opt/appdata/sonarr/config:/config'
       - '/media/media/TV Shows:/media/media/TV Shows'
       - '/media/media/downloads/TV:/media/media/downloads/TV'
     ports:
       - '8989:8989'
     restart: unless-stopped
+
+# Overseerr
+---
+version: '3.5'
+services:
+  overseerr:
+    image: sctx/overseerr:latest
+    container_name: overseerr
+    hostname: overseerr
+    restart: unless-stopped
+    environment:
+      LOG_LEVEL: info
+      TZ: America/New_York
+    volumes:
+      - '/opt/appdata/overseerr/app/config:/app/config'
+    ports:
+      - '5055:5055'
