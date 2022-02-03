@@ -6,7 +6,7 @@ services:
 
 # Sonarr
   sonarr:
-    image: docker.io/linuxserver/sonarr:latest
+    image: linuxserver/sonarr:latest
     container_name: sonarr
     hostname: sonarr
     environment:
@@ -23,7 +23,7 @@ services:
 
 # Overseerr
   overseerr:
-    image: sctx/overseerr:latest
+    image: linuxserver/overseerr:latest
     container_name: overseerr
     hostname: overseerr
     restart: unless-stopped
