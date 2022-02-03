@@ -15,3 +15,23 @@ services:
     ports:
       - '3579:3579'
     restart: unless-stopped
+
+# Sonarr
+---
+version: '3.5'
+services:
+  sonarr:
+    image: docker.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    hostname: sonarr
+    environment:
+      PUID: '0'
+      PGID: '0'
+      TZ: America/New_York
+    volumes:
+      - '/opt/appdata/sonarr:/config'
+      - '/media/media/TV Shows:/media/media/TV Shows'
+      - '/media/media/downloads/TV:/media/media/downloads/TV'
+    ports:
+      - '8989:8989'
+    restart: unless-stopped
