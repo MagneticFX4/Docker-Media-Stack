@@ -1,20 +1,8 @@
-# #Ombi
+# Setup
 ---
 version: '3.5'
 services:
-  ombi:
-    image: ghcr.io/linuxserver/ombi:latest
-    container_name: ombi
-    hostname: ombi
-    environment:
-      PUID: '1000'
-      PGID: '1000'
-      TZ: America/New_York
-    volumes:
-      - '/opt/appdata/ombi/config:/config'
-    ports:
-      - '3579:3579'
-    restart: unless-stopped
+
 
 # Sonarr
   sonarr:
@@ -26,7 +14,7 @@ services:
       PGID: '0'
       TZ: America/New_York
     volumes:
-      - '/opt/appdata/sonarr/config:/config'
+      - '/opt/appdata/sonarr:/config'
       - '/media/media/TV Shows:/media/media/TV Shows'
       - '/media/media/downloads/TV:/media/media/downloads/TV'
     ports:
@@ -43,6 +31,6 @@ services:
       LOG_LEVEL: info
       TZ: America/New_York
     volumes:
-      - '/opt/appdata/overseerr/app/config:/app/config'
+      - '/opt/appdata/overseerr:/app/config'
     ports:
       - '5055:5055'
