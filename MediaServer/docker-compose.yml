@@ -18,8 +18,6 @@ services:
 
 # Sonarr
 ---
-version: '3.5'
-services:
   sonarr:
     image: docker.io/linuxserver/sonarr:latest
     container_name: sonarr
@@ -38,8 +36,6 @@ services:
 
 # Overseerr
 ---
-version: '3.5'
-services:
   overseerr:
     image: sctx/overseerr:latest
     container_name: overseerr
