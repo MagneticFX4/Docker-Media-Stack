@@ -98,3 +98,22 @@ services:
     ports:
       - '6789:6789'
     restart: unless-stopped
+
+# TDARR Server
+  tdarr:
+    image: haveagitgat/tdarr:latest
+    container_name: tdarr_server
+    hostname: tdarr
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/New_York
+    volumes:
+      - '/opt/tdarr/server:/app/server'
+      - '/media/media:/media'
+      - '/media/media/Cache:/temp'
+      - '/opt/tdarr/configs:/app/configs'
+      - '/opt/tdarr/logs:/app/logs'
+    ports:
+      - '8265-8267:8265-8267'
+    restart: unless-stopped
