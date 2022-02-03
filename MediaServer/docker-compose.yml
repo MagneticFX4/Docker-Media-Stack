@@ -34,3 +34,20 @@ services:
       - '/opt/appdata/overseerr:/app/config'
     ports:
       - '5055:5055'
+
+# Radarr
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    hostname: radarr
+    environment:
+      PUID: '0'
+      PGID: '0'
+      TZ: America/New_York
+    volumes:
+      - '/opt/appdata/radarr:/config'
+      - '/media/media/downloads/Movies:/media/media/downloads/Movies'
+      - '/media/media/Movies:/media/media/Movies'
+    ports:
+      - '7878:7878'
+    restart: unless-stopped
