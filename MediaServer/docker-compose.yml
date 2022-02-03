@@ -52,7 +52,7 @@ services:
     ports:
       - '5055:5055'
 
-#Tautulli
+# Tautulli
   tautulli:
     image: linuxserver/tautulli:latest
     container_name: tautulli
@@ -66,4 +66,19 @@ services:
       - '/media/backup/tautulli:/backup'
     ports:
       - '8181:8181'
+    restart: unless-stopped
+
+# Prowlarr
+  prowlarr:
+    image: linuxserver/prowlarr:develop
+    container_name: prowlarr
+    hostname: prowlarr
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/New_York
+    volumes:
+      - '/opt/appdata/prowlarr:/config/'
+    ports:
+      - '9696:9696'
     restart: unless-stopped
