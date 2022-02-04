@@ -11,5 +11,5 @@ This docker compose stack will provision the below media server applications:
 	• NZBGet
 	• Tautulli
 	• TDARR
-	• Portainer (For container management)
+	• Portainer Business Edition (free up to 5 nodes) - Used for container management and using business edition for auto deployment from this repo.
 	• ouroboros (To keep all containers up to date)
