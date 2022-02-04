@@ -48,7 +48,7 @@ services:
       LOG_LEVEL: info
       TZ: America/New_York
     volumes:
-      - '/opt/appdata/overseerr:/app/config'
+      - '/opt/appdata/overseerr:/config'
     ports:
       - '5055:5055'
 
