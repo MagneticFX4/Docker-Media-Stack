@@ -117,3 +117,15 @@ services:
     ports:
       - '8265-8267:8265-8267'
     restart: unless-stopped
+
+# Ouroboros
+  ouroboros:
+    image: pyouroboros/ouroboros:latest
+    container_name: ouroboros
+    hostname: ouroboros
+    restart: unless-stopped
+    environment:
+      CLEANUP: true
+      TZ: America/New_York
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
