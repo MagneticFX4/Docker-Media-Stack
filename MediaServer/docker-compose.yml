@@ -125,7 +125,10 @@ services:
     hostname: ouroboros
     restart: unless-stopped
     environment:
-      CLEANUP: true
-      TZ: America/New_York
+      LOG_LEVEL: 'info'
+      SELF_UPDATE: 'true'
+      CLEANUP: 'true'
+      INTERVAL: '300'
+      TZ: 'America/New_York'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
