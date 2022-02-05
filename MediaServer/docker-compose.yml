@@ -3,6 +3,22 @@
 version: '3.5'
 services:
 
+# Plex
+  plex:
+    image: linuxserver/plex:latest
+    container_name: plex
+    hostname: sonarr
+    environment:
+      - PUID: '1000'
+      - PGID: '1000'
+      - TZ: America/New_York
+      - VERSION: 'docker'
+    volumes:
+      - /opt/appdata/plexmediaserver:/config
+      - /media:/media 
+    ports:
+      - '32400:32400'
+    restart: unless-stopped
 
 # Sonarr
   sonarr:
