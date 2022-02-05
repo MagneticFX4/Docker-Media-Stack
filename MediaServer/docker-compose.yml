@@ -9,10 +9,10 @@ services:
     container_name: plex
     hostname: sonarr
     environment:
-      - PUID: '1000'
-      - PGID: '1000'
-      - TZ: America/New_York
-      - VERSION: 'docker'
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/New_York
+      VERSION: 'docker'
     volumes:
       - /opt/appdata/plexmediaserver:/config
       - /media:/media 
