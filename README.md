@@ -11,4 +11,4 @@ This docker compose stack will provision the below media server applications:
 	• NZBGet
 	• Tautulli
 	• TDARR
-	• ouroboros (To keep all containers up to date)
+	• Watchtower
