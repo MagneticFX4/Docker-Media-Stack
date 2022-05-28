@@ -142,5 +142,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       TZ: America/New_York
-      WATCHTOWER_CLEANUP: true
+      WATCHTOWER_CLEANUP: 'true'
       WATCHTOWER_POLL_INTERVAL: 3600
