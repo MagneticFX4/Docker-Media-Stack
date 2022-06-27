@@ -135,6 +135,24 @@ services:
       - '8265-8267:8265-8267'
     restart: unless-stopped
 
+# QBittorrent
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - WEBUI_PORT=8090
+    volumes:
+      - /opt/appdata/qbittorrent:/config/
+      - /media/media/downloads:/downloads
+    ports:
+      - 8090:8090
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+
 # Watchtower
   watchtower:
     image: containrrr/watchtower:latest
