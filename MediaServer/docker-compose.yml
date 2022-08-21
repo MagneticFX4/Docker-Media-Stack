@@ -135,6 +135,17 @@ services:
       - '8265-8267:8265-8267'
     restart: unless-stopped
 
+# Homarr 
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /opt/appdata/homarr/configs:/app/data/configs
+      - /opt/appdata/homarr/icons:/app/public/icons
+    ports:
+      - '7575:7575'
+
 # Watchtower
   watchtower:
     image: containrrr/watchtower:latest
