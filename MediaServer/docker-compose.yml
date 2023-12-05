@@ -156,3 +156,19 @@ services:
       TZ: America/New_York
       WATCHTOWER_CLEANUP: 'true'
       WATCHTOWER_POLL_INTERVAL: 3600
+
+# SABNZBD
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - /opt/appdata/nzbget:/config
+      - /media/media/downloads:/downloads #optional
+      - /media/media/downloads/incomplete:/incomplete-downloads #optional
+    ports:
+      - 8080:8080
+    restart: unless-stopped
