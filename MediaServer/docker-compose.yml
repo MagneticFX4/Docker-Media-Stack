@@ -167,8 +167,8 @@ services:
       - TZ=America/New_York
     volumes:
       - /opt/appdata/nzbget:/config
-      - /media/media/downloads:/downloads #optional
-      - /media/media/downloads/incomplete:/incomplete-downloads #optional
+      - /media/media/downloads:/media/media/downloads #optional
+      - /media/media/downloads/incomplete:/media/media/incomplete-downloads #optional
     ports:
       - 8080:8080
     restart: unless-stopped
